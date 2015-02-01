@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{F8E07FA5-0512-E6E8-AE97-F6854EFEB5E1}") = "smarbles", "Assembly-CSharp.csproj", "{6ACBCDC9-C869-0AF0-5625-316EC9350B92}"
 EndProject
+Project("{F8E07FA5-0512-E6E8-AE97-F6854EFEB5E1}") = "smarbles", "Assembly-UnityScript-firstpass.unityproj", "{C611948F-AFBD-7969-5B06-BD3E16BCCFEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{6ACBCDC9-C869-0AF0-5625-316EC9350B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACBCDC9-C869-0AF0-5625-316EC9350B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACBCDC9-C869-0AF0-5625-316EC9350B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C611948F-AFBD-7969-5B06-BD3E16BCCFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C611948F-AFBD-7969-5B06-BD3E16BCCFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C611948F-AFBD-7969-5B06-BD3E16BCCFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C611948F-AFBD-7969-5B06-BD3E16BCCFEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -35,4 +41,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal
