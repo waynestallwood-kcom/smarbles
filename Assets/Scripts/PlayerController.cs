@@ -49,11 +49,10 @@ public class PlayerController : MonoBehaviour
 		if (gameover == 0 && playerMoved == 1) {
 						timeLeft -= Time.deltaTime; // don't start counting time until player has moved
 					  	}
-		if (timeLeft <= 0.0f){
+		if (timeLeft <= 0.0f && gameover == 0){
 						// Player took too long.
 						loseText.text = "You ran out of time";
-						EndGame ();
-						timeLeft = 0.1f; // FIXME: Yuck 
+						EndGame (); 
 						audio.PlayOneShot(Youlose, 1F);
 						}
 		else
