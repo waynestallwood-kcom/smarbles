@@ -19,12 +19,14 @@ public class PlayerController : MonoBehaviour
 	private int icons;
 	private int lives;
 	private int gameover;
+	private int playerMoved;
 
 	void Start ()
 	{
 		icons = 14;
 		lives = 3;
 		gameover = 0;
+		playerMoved = 0;
 		SetScoreText ();
 		SetLivesText ();
 		winText.text = "";
@@ -34,21 +36,24 @@ public class PlayerController : MonoBehaviour
 
 	void Update ()
 	{
-		if (gameover == 0) {
-						timeLeft -= Time.deltaTime;
-					  }
-		if (timeLeft <= 0.0f)
-		{
-			// Player took too long.
-			loseText.text = "You ran out of time";
-			EndGame ();
-			timeLeft = 0.1f; // FIXME: Yuck 
-			audio.PlayOneShot(Youlose, 1F);
-		}
+		if (rigidbody.angularVelocity != Vector3.zero) {
+						playerMoved = 1; // Set flag when player object moves for the first time
+						}
+
+		if (gameover == 0 && playerMoved == 1) {
+						timeLeft -= Time.deltaTime; // don't start counting time until player has moved
+					  	}
+		if (timeLeft <= 0.0f){
+						// Player took too long.
+						loseText.text = "You ran out of time";
+						EndGame ();
+						timeLeft = 0.1f; // FIXME: Yuck 
+						audio.PlayOneShot(Youlose, 1F);
+						}
 		else
-		{
-			timeText.text = "Time left = " + (int)timeLeft + " seconds";
-		}
+						{
+						timeText.text = "Time left = " + (int)timeLeft + " seconds";
+						}
 	}
 
 	void FixedUpdate ()
@@ -99,7 +104,7 @@ public class PlayerController : MonoBehaviour
 						}
 	}
 
-	void EndGame ()
+	void EndGame () // Stops all player motion and sets the gameover flag so countdown stops
 	{
 		gameover = 1;
 		rigidbody.velocity = Vector3.zero;
