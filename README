@@ -1,0 +1,11 @@
+github.com/wstallwoods421/smarbles
+
+A silly Marbles game for testing import of AWS icons into Unity3D
+
+Just load the contents of this repo as a project in Unity3D > 4.0
+All assets included, just just build from the project on first go
+
+Most of the game logic is in the player controller script.
+Go to the player object in the project hierarchy in unity to set time left and player speed.
+
+
